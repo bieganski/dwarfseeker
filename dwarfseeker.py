@@ -83,6 +83,8 @@ def handle_elf(elf_file: Path, exclude_regex: Optional[str], include_regex: Opti
                     continue
                 logging.info(f"cu-infix match: {source_path}")
             dump_symbols_recursive(die=die, exclude_regex=exclude_regex, include_regex=include_regex, detailed_inline_expansion=detailed_inline_expansion)
+        if verbose:
+            print(f"# END")
 
 def die_try_get_name(die: DIE) -> Optional[str]:
     """

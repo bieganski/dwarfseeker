@@ -61,3 +61,6 @@ m.bieganski@hostname:~$ objdump -d  ./a.out | c++filt
 * a single Python script
 * `pyelftools` is the only external dependency (see [requirements.txt](./requirements.txt))
 * works for any architecture that is supported by `pyelftools`. For non-x86, usually there is a limitation, that the input ELF shall not have relocations (ET_EXEC should always work)
+
+# Complementary tools in this repo
+* [find_in_range.py](tools/find_in_range.py) - like `addr2line`, but crafted for `dwarfseeker.py` output. Quickly answer the question "to which function does addr X belongs to".

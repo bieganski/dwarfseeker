@@ -64,3 +64,4 @@ m.bieganski@hostname:~$ objdump -d  ./a.out | c++filt
 
 # Complementary tools in this repo
 * [find_in_range.py](tools/find_in_range.py) - like `addr2line`, but crafted for `dwarfseeker.py` output. Quickly answer the question "to which function does addr X belongs to".
+* [objdump_insn_summary.py](tools/objdump_insn_summary.py) - given an ELF and ADDR_START, ADDR_END, it will print a short assembly instruction summary, for region bound by file offset `[ADDR_START, ADDR_END)`.

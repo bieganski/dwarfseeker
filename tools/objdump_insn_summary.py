@@ -126,7 +126,11 @@ def main():
     if not cache_file.exists():
         logging.info(f"cache not yet there (missing {cache_file})")
         cmd = f"{args.objdump_executable}  -M no-aliases --no-show-raw-insn -Fd {args.elf_file} > {cache_file}"
-        run_shell(cmd)
+        try:
+            run_shell(cmd)
+        except Exception as e:
+            cache_file.unlink()
+            raise e
     else:
         logging.info(f"cache will be reused ({cache_file})")
 
